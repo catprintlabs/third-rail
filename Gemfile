@@ -21,7 +21,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'volt', path: '../volt'
+gem 'volt', git: 'https://github.com/catprintlabs/volt.git'  #path: '../volt'
 gem 'volt-sockjs', git: 'https://github.com/catprintlabs/sockjs-ruby.git'
 
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -47,18 +47,16 @@ gem "pry", group: [:development]
 # The following gem's are optional for themeing
 
 # Twitter bootstrap
-gem 'volt-bootstrap'
+gem 'volt-bootstrap', '0.0.10'
 
 # Simple theme for bootstrap, remove to theme yourself.
-gem 'volt-bootstrap-jumbotron-theme'
+gem 'volt-bootstrap-jumbotron-theme', '0.0.5'
 
 # User templates for login, signup, and logout menu.
-gem 'volt-user-templates'
+#gem 'volt-user-templates'
 
 # Server for MRI
 platform :mri do
   gem 'thin', '~> 1.6.0'
   gem 'bson_ext', '~> 1.9.0'
 end
-
-
