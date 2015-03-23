@@ -7,7 +7,50 @@ The goal is to provide access to voltrb from within existing rails apps via addi
 
 Any thoughts or discussion is welcome at https://gitter.im/catprintlabs/third-rail
 
+##install
 
+Currently this repo is just a demo rails app, then pulls in a modified version of volt.
+Clone the repo,
+bundle install
+bundle exec rails s
+
+The app should come up...  let me know via gitter if you have any problems.
+
+##implementation status:
+
+So far the only thing implemented is the being able to use volt to create a layout within the rails app, and to have volt request a partial be delivered as part of the volt view.  This is _very preliminary proof of concept implementation_.
+
+Volt code goes into a directory called "voltage" within the top level rails "app" directory.
+
+The volt code follows the normal volt framework conventions, within that directory, with the addition of a the
+
+    {{ content_for }}
+    
+binding.  `content_for` will be replaced with a view from rails that has the matching name as the current volt view being rendered.
+
+To get things started on the rails side use the `volt_layout` helper 
+
+   <%= volt_layout %>
+
+The `content_for` binding can tie into a particular part of the rails view by specifying a symbol.  The matching rails view will have a matching `content_for` with the same symbol.  For example
+
+    {{ content_for :footer }}
+
+will be replaced by the some section of the rails view that is defined by
+
+    <% content_for :footer do %>
+       # stuff to go into the footer
+    <% end %>
+
+To summarize:
+
+* Within the rails layout do a `<%= volt_layout %>` to hand control for rendering the the layout to volt.
+* The volt code goes in a `voltage` directory within the rails `app` directory.
+* Within a volt view you give control of rendering back to rails by doing a `content_for`
+* Within the matching rails view you can break up parts of the content by labelling them as `<% content_for symbol do %> ... <% end %>`.  These sections will matched to any `{{ content_for symbol }}` bindings in the volt view.
+
+
+ 
 ##Initial thoughts (sort of stream of conscience random ideas)
 
 rails and volt will coexist with volt being a separate rack app.  Communication between the two will be via mongodb.
