@@ -5,7 +5,8 @@ third-rail
 
 The goal is to provide access to voltrb from within existing rails apps via addition of a third-rail gem.
 
-Any thoughts or discussion is welcome at https://gitter.im/catprintlabs/third-rail
+Any thoughts or discussion is welcome at [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/catprintlabs/third-rail?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 ##install
 
@@ -81,3 +82,4 @@ What you would like initially is something like this:
 * controller does normal stuff
 * then makes sure that any "volt" models are synced to the rails data.
 * then does a "special" render operation that hands control over to volt, which delivers the page
+
