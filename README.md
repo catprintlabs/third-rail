@@ -50,7 +50,17 @@ To summarize:
 * Within a volt view you give control of rendering back to rails by doing a `content_for`
 * Within the matching rails view you can break up parts of the content by labelling them as `<% content_for symbol do %> ... <% end %>`.  These sections will matched to any `{{ content_for symbol }}` bindings in the volt view.
 
+## Proposed auto update from rails on content for:
 
+Thinking about how to get any data delivered from rails to automagically:
+
+I am thinking that something like `<% invalidate :after => 37.seconds %>`  
+
+Invalidate would mark the current content as being invalid under some conditions (simpliest is time).  This would get sent down to the volt client, and then setup inside the binding.
+
+For time its easy, but how about some other property (like the user changes)
+
+?? any ideas
  
 ##Initial thoughts (sort of stream of conscience random ideas)
 
