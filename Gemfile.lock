@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/catprintlabs/volt.git
-  revision: 36b527991c88b90ccf3efb687b43dfa0db6885bc
+  revision: a13f4654ba12951be0e3011255f63e3e7492c22d
   specs:
     volt (0.8.27.beta2)
       bcrypt (~> 3.1.9)
@@ -231,6 +231,9 @@ GEM
       json (>= 1.8.0)
     volt-bootstrap (0.0.10)
     volt-bootstrap-jumbotron-theme (0.0.5)
+    volt-fields (0.0.13)
+    volt-user-templates (0.0.6)
+      volt-fields (~> 0.0.11)
     websocket (1.2.1)
     websocket-driver (0.5.3)
       websocket-extensions (>= 0.1.0)
@@ -259,3 +262,4 @@ DEPENDENCIES
   volt-bootstrap (= 0.0.10)
   volt-bootstrap-jumbotron-theme (= 0.0.5)
   volt-sockjs!
+  volt-user-templates

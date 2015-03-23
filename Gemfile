@@ -21,7 +21,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'volt', git: 'https://github.com/catprintlabs/volt.git'  #path: '../volt'
+gem 'volt', git: 'https://github.com/catprintlabs/volt.git'  # path: '../volt' #
 gem 'volt-sockjs', git: 'https://github.com/catprintlabs/sockjs-ruby.git'
 
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -53,7 +53,7 @@ gem 'volt-bootstrap', '0.0.10'
 gem 'volt-bootstrap-jumbotron-theme', '0.0.5'
 
 # User templates for login, signup, and logout menu.
-#gem 'volt-user-templates'
+gem 'volt-user-templates'
 
 # Server for MRI
 platform :mri do
