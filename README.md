@@ -60,6 +60,16 @@ Invalidate would mark the current content as being invalid under some conditions
 
 For time its easy, but how about some other property (like the user changes)
 
+As an alternative / addition what if the `{{ content_for }}` associated a bunch of locals that were passed up to the rails view, like this: 
+
+```ruby
+   {{ content_for :foo => _thing._property, :fob => _other_thing * 10 }}
+```
+
+Within the rails view :foo and :fob would be bound to the values of _thing.property, and _other_thing * 10.  The opal computation mechanism would then take care of re-requesting the view whenever _thing._property or _other_thing changed.
+
+
+
 ?? any ideas
  
 ##Initial thoughts (sort of stream of conscience random ideas)
