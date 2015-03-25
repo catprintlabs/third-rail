@@ -7,15 +7,39 @@ The goal is to provide access to voltrb from within existing rails apps via addi
 
 Any thoughts or discussion is welcome at [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/catprintlabs/third-rail?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+## Requirements
+ 
+ Ruby 2.1.2
 
 ##install
 
 Currently this repo is just a demo rails app, then pulls in a modified version of volt.
-Clone the repo,
-bundle install
-bundle exec rails s
+1. Clone the repo,
+2. bundle install
+3. bundle exec rails s
 
 The app should come up...  let me know via gitter if you have any problems.
+
+initializing volt
+                             ,--,           ,----, 
+                ,----..   ,---.'|         ,/   .`| 
+               /   /   \  |   | :       ,`   .'  : 
+       ,---.  /   .     : :   : |     ;    ;     / 
+      /__./| .   /   ;.  \|   ' :   .'___,/    ,'  
+ ,---.;  ; |.   ;   /  ` ;;   ; '   |    :     |   
+/___/ \  | |;   |  ; \ ; |'   | |__ ;    |.';  ;   
+\   ;  \ ' ||   :  | ; | '|   | :.'|`----'  |  |   
+ \   \  \: |.   |  ' ' ' :'   :    ;    '   :  ;   
+  ;   \  ' .'   ;  \; /  ||   |  ./     |   |  '   
+   \   \   ' \   \  ',  / ;   : ;       '   :  |   
+    \   `  ;  ;   :    /  |   ,/        ;   |.'    
+     :   \ |   \   \ .'   '---'         '---'      
+      '---"     `---`                              
+                                                   
+=> Booting Thin
+=> Rails 4.1.0 application starting in development on http://0.0.0.0:3000
+
+
 
 ##implementation status:
 
