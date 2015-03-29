@@ -1,6 +1,7 @@
 ThirdRail::Engine.routes.draw do
   mount Rails.application.config.volt_server  => "/volt"
-
+  root "volt#volt"
+  get "*path" => "volt#volt"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
