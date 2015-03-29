@@ -5,6 +5,7 @@ PATH
       rails (~> 4.1.0)
       volt-bootstrap
       volt-bootstrap-jumbotron-theme
+      volt-sockjs-rails-wip
       volt-user-templates
       volt_rails_wip
 
@@ -176,9 +177,15 @@ GEM
       rack
       rack-mount (~> 0.8.3)
       thin
+    volt-sockjs-rails-wip (0.3.4.4)
+      faye-websocket (~> 0.7.1)
+      json
+      rack
+      rack-mount (~> 0.8.3)
+      thin
     volt-user-templates (0.0.6)
       volt-fields (~> 0.0.11)
-    volt_rails_wip (0.8.27.beta2)
+    volt_rails_wip (0.8.27.beta3)
       bcrypt (~> 3.1.9)
       bundler (>= 1.5)
       capybara (~> 2.4.2)
