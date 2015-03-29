@@ -18,6 +18,11 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.1.0"
+  s.add_dependency "volt_rails_wip"
+  s.add_dependency "volt-sockjs-rails-wip"
+  s.add_dependency 'volt-bootstrap'
+  s.add_dependency 'volt-bootstrap-jumbotron-theme'
+  s.add_dependency 'volt-user-templates'
 
   s.add_development_dependency "sqlite3"
 end
