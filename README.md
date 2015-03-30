@@ -103,3 +103,22 @@ What you would like initially is something like this:
 * then makes sure that any "volt" models are synced to the rails data.
 * then does a "special" render operation that hands control over to volt, which delivers the page
 
+## goals / Use cases / how will this be used
+
+#### upgrade existing rails app to on page code more dynamic, and use Opal rather than javascript.
+
+Be able to use volt rendering, views, bindings, and computations within a rails page.
+
+Currently the direction to achieve this goal is the <%= volt_layout %> and {{ content_for }} mechanisms.  
+
+These allow an existing rails page to be electrified with no architectectural changes to the rails app.
+
+As pages are "electrified" the become part of a single page volt app, and can communicate internally giving a better user experience.
+
+#### async updates of one rails client page, when another client page changes.
+
+At some point it may be desirable to have one client page of the rails app communicate data with another client page. 
+
+For example the rails app needs to support a dynamic "likes" button.  Where if one client likes an item, then all other browsers viewing that item will get updated.
+
+???? How do we achieve this is the question I am struggling with at the moment ???
