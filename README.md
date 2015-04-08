@@ -10,7 +10,8 @@ Any thoughts or discussion is welcome at [![Gitter](https://badges.gitter.im/Joi
 
 ##install
 
-Currently this repo is just a demo rails app, then pulls in a modified version of volt.
+Currently this repo is a basic engine extracted from a proof of concept demo rails app.  It's using a forked copy of the volt gem just for development, because a few changes were made that are not ready to pull in to volt master.
+
 Clone the repo,
 bundle install
 bundle exec rails s
@@ -26,10 +27,10 @@ Volt code goes into a directory called "voltage" within the top level rails "app
 The volt code follows the normal volt framework conventions, within that directory, with the addition of a the
 
     {{ content_for }}
-    
+
 binding.  `content_for` will be replaced with a view from rails that has the matching name as the current volt view being rendered.
 
-To get things started on the rails side use the `volt_layout` helper 
+To get things started on the rails side use the `volt_layout` helper
 
    <%= volt_layout %>
 
@@ -54,13 +55,13 @@ To summarize:
 
 Thinking about how to get any data delivered from rails to automagically:
 
-I am thinking that something like `<% invalidate :after => 37.seconds %>`  
+I am thinking that something like `<% invalidate :after => 37.seconds %>`
 
 Invalidate would mark the current content as being invalid under some conditions (simpliest is time).  This would get sent down to the volt client, and then setup inside the binding.
 
 For time its easy, but how about some other property (like the user changes)
 
-As an alternative / addition what if the `{{ content_for }}` associated a bunch of locals that were passed up to the rails view, like this: 
+As an alternative / addition what if the `{{ content_for }}` associated a bunch of locals that were passed up to the rails view, like this:
 
 ```ruby
    {{ content_for :foo => _thing._property, :fob => _other_thing * 10 }}
@@ -71,7 +72,7 @@ Within the rails view :foo and :fob would be bound to the values of _thing.prope
 
 
 ?? any ideas
- 
+
 ##Initial thoughts (sort of stream of conscience random ideas)
 
 rails and volt will coexist with volt being a separate rack app.  Communication between the two will be via mongodb.
@@ -86,19 +87,19 @@ this should provide the basic communication mechanism.
 Syncronize every change between the databases using activerecord and mongos builtin monitoring...
 
 ###More Intelligent - but more work:
-Describe mapping in the active record models to volt models 
+Describe mapping in the active record models to volt models
 
 ###Harder still - but probably how you would do it from scratch:
 Map volt models to rails, and manually connect
 
-###Forget Mongo + Rails...  
+###Forget Mongo + Rails...
 use an automatically generated API to talk between the volt app and rails.
 
 ##Different Approach altogether
 
 think of a typical migration.  You have some pages that are rails views, but you want to start using volt.
 What you would like initially is something like this:
-* request the page, 
+* request the page,
 * controller does normal stuff
 * then makes sure that any "volt" models are synced to the rails data.
 * then does a "special" render operation that hands control over to volt, which delivers the page
@@ -109,7 +110,7 @@ What you would like initially is something like this:
 
 Be able to use volt rendering, views, bindings, and computations within a rails page.
 
-Currently the direction to achieve this goal is the <%= volt_layout %> and {{ content_for }} mechanisms.  
+Currently the direction to achieve this goal is the <%= volt_layout %> and {{ content_for }} mechanisms.
 
 These allow an existing rails page to be electrified with no architectectural changes to the rails app.
 
@@ -117,7 +118,7 @@ As pages are "electrified" the become part of a single page volt app, and can co
 
 #### async updates of one rails client page, when another client page changes.
 
-At some point it may be desirable to have one client page of the rails app communicate data with another client page. 
+At some point it may be desirable to have one client page of the rails app communicate data with another client page.
 
 For example the rails app needs to support a dynamic "likes" button.  Where if one client likes an item, then all other browsers viewing that item will get updated.
 
