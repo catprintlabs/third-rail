@@ -10,5 +10,7 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
+gem 'volt',        git: "git://github.com/bglusman/volt"
+gem 'volt-sockjs', git: "git://github.com/bglusman/sockjs-ruby"
 # To use debugger
 # gem 'debugger'
