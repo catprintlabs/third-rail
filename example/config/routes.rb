@@ -1,17 +1,9 @@
-    #   require 'pry'
-    # binding.pry
-# require_relative '/lib/third_rail/engine'
-ThirdRail::Engine.routes.draw do
+Rails.application.routes.draw do
 
-  mount Rails.application.config.volt_server  => "/volt"
-  root "volt#volt"
-  get "*path" => "volt#volt"
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root 'home#index'
+  get "/about" => "about#index"
+  get "/random" => "random#index"
+  mount ThirdRail::Engine  => "/"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
