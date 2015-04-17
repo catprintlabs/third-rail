@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: git://github.com/bglusman/volt
-  revision: 3d9690bf1a0a0e61ad3a1e14132c9450f68cb551
+  revision: cc609996e061c05b04e8cb14bdbf2f15bd5edc8c
   specs:
     volt (0.9.0.pre7)
       bcrypt (~> 3.1.9)
@@ -220,7 +220,7 @@ GEM
     volt-bootstrap (0.0.10)
     volt-bootstrap_jumbotron_theme (0.1.0)
     volt-fields (0.1.0)
-    volt-user_templates (0.1.4)
+    volt-user_templates (0.1.6)
       volt-fields (~> 0.1.0)
     websocket-driver (0.5.4)
       websocket-extensions (>= 0.1.0)
