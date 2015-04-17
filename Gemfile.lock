@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: git://github.com/bglusman/volt
-  revision: 3d9690bf1a0a0e61ad3a1e14132c9450f68cb551
+  revision: 5feb9bd6894a8c1d530dcfcd6c4142872369d26a
   specs:
     volt (0.9.0.pre7)
       bcrypt (~> 3.1.9)
