@@ -1,4 +1,5 @@
 require 'volt/server'
+require 'volt_extensions/model_controller'
 module ThirdRail
   class Engine < ::Rails::Engine
     isolate_namespace ThirdRail

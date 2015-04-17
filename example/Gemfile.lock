@@ -220,7 +220,7 @@ GEM
     volt-bootstrap (0.0.10)
     volt-bootstrap_jumbotron_theme (0.1.0)
     volt-fields (0.1.0)
-    volt-user_templates (0.1.4)
+    volt-user_templates (0.1.6)
       volt-fields (~> 0.1.0)
     websocket-driver (0.5.4)
       websocket-extensions (>= 0.1.0)
