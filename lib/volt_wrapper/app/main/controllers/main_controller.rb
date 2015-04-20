@@ -30,6 +30,7 @@ module Main
         unless page._last_valid_path
           puts 'first time in start watcher'
           page._last_valid_path = url.path
+          debugger
           page._rails_content = `$(document)`
         end
         url_path = url.path # we don't want it changing while we are waiting
@@ -54,6 +55,13 @@ module Main
       tag = "#rails_content_#{tag}"
       # Element.find(tag, the_rails_content)
       raw `$(#{tag}, #{the_rails_content})`.html
+    end
+
+    def rails_layout(tag = :layout)
+      the_rails_layout = page._rails_layout
+      tag = "#rails_layout_#{tag}"
+      # Element.find(tag, the_rails_content)
+      raw `$(#{tag}, #{the_rails_layout})`.html
     end
 
     private
