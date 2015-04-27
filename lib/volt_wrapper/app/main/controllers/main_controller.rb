@@ -5,6 +5,16 @@ module Main
       # Add code for when the index view is loaded
     end
 
+
+    def index_ready
+      @components = []
+      Element.find('.volt-rails-component').each do |component|
+        component_name = Native(component).data('component')
+        target         = Volt::DomTarget.new(nil, nil, component)
+        @components   << Volt::TemplateRenderer.new($page, target, self, 'main', component_name)
+      end
+    end
+
     def about
       # Add code for when the about view is loaded
     end
@@ -53,11 +63,10 @@ module Main
     def content_for(tag = :layout)
       the_rails_content = page._rails_content
       tag = "#rails_content_#{tag}"
-      # Element.find(tag, the_rails_content)
       raw `$(#{tag}, #{the_rails_content})`.html
     end
 
-    def rails_layout(tag = :layout)
+    def rails_layout(tag = :layout) #not yet used, mental note/plan
       the_rails_layout = page._rails_layout
       tag = "#rails_layout_#{tag}"
       # Element.find(tag, the_rails_content)

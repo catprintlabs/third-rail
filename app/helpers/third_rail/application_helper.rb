@@ -31,5 +31,10 @@ module ThirdRail
 
       end
     end
+
+    def render_component(component_name)
+      "<div class='volt-rails-component' data-component='#{component_name}' />".html_safe
+    end
+
   end
 end
