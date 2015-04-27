@@ -10,8 +10,11 @@ module Main
       @components = []
       Element.find('.volt-rails-component').each do |component|
         component_name = Native(component).data('component')
-        target         = Volt::DomTarget.new(nil, nil, component)
-        @components   << Volt::TemplateRenderer.new($page, target, self, 'main', component_name)
+        element = Element.find(".volt-rails-component[data-component~='#{component_name}']")
+        element.html = "<!-- $#{component_name.upcase} --><!-- $/#{component_name.upcase} -->"
+        component_controller = DateSelect::MainController.new
+
+        @components   << Volt::TemplateRenderer.new($page, Volt::DomTarget.new, component_controller, component_name.upcase, component_name + '/main/index/body')
       end
     end
 
@@ -40,7 +43,6 @@ module Main
         unless page._last_valid_path
           puts 'first time in start watcher'
           page._last_valid_path = url.path
-          debugger
           page._rails_content = `$(document)`
         end
         url_path = url.path # we don't want it changing while we are waiting
