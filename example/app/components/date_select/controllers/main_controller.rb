@@ -1,6 +1,6 @@
 
 class DateSelect
-  class SelectController < Volt::ModelController
+  class MainController < Volt::ModelController
 
     def initialize
     end
