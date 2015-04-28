@@ -16,6 +16,8 @@ module Main
         component_controller = component_class.new
 
         @components   << Volt::TemplateRenderer.new($page, Volt::DomTarget.new, component_controller, component_name.upcase, component_name + '/main/index/body')
+        handler = Volt::ControllerHandler.new(component_controller, 'index')
+        handler.call_action(nil, 'ready') #hack
       end
     end
 

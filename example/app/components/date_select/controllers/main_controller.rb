@@ -3,12 +3,10 @@ module DateSelect
 
     model :page
 
-    def initialize
-      Document.ready? do
-        dp = Element.find('.volt-date-picker')
-        `dp.datepicker()`
-        nil
-      end
+    def index_ready
+      dp = Element.find('.volt-date-picker')
+      `dp.datepicker()`
+      nil
     end
 
   end
