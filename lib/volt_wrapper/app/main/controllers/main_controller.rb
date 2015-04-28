@@ -7,15 +7,12 @@ module Main
 
 
     def index_ready
-      @components = []
       Element.find('.volt-rails-component').each do |component|
         component_name = Native(component).data('component')
         element = Element.find(".volt-rails-component[data-component~='#{component_name}']")
         element.html = "<!-- $#{component_name.upcase} --><!-- $/#{component_name.upcase} -->"
         component_class      = Kernel.const_get(component_name.camelize).const_get('MainController')
         component_controller = component_class.new
-
-        @components   << Volt::TemplateRenderer.new($page, Volt::DomTarget.new, component_controller, component_name.upcase, component_name + '/main/index/body')
       end
     end
 

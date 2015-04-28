@@ -1,3 +1,4 @@
+require 'opal'
 module ThirdRail
   module ApplicationHelper
 
@@ -33,6 +34,12 @@ module ThirdRail
     end
 
     def render_component(component_name)
+      opal_code = Volt::ComponentCode.new(component_name, $volt_server.component_paths, false).code
+      js_code   = "$( document ).ready(function(){ #{Opal.compile(opal_code)}})"
+      content_for :footer do
+        javascript_tag(js_code.html_safe)
+      end
+
       "<div class='volt-rails-component' data-component='#{component_name}' />".html_safe
     end
 

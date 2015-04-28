@@ -8,8 +8,10 @@ module ThirdRail
     #
     dir = __FILE__.rpartition('/').first
     volt_path = File.expand_path("#{dir}/../volt_wrapper")
-    server = Volt::Server.new(volt_path, 'app/components').app
-    config.volt_server = server
+    server = Volt::Server.new(volt_path, 'app/components')
+    app    = server.app
+    config.volt_server = app
+    $volt_server = server
     config.middleware.delete Rack::Lock
   end
 end
