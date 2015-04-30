@@ -19,6 +19,11 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.2"
   s.add_dependency 'faye-websocket'
+  if ENV['PUMA']
+    s.add_dependency 'puma'
+  else
+    s.add_dependency 'thin'
+  end
 
   s.add_development_dependency "sqlite3"
 end

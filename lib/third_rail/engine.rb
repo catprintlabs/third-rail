@@ -1,5 +1,6 @@
 require 'volt/server'
 require 'volt/boot'
+require 'volt/server/websocket/rack_server_adaptor'
 require_relative 'build_dependencies'
 module ThirdRail
   class Engine < ::Rails::Engine
