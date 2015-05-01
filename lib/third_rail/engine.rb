@@ -21,3 +21,13 @@ module ThirdRail
     config.middleware.delete Rack::Lock
   end
 end
+
+#TEMPORARY HACK for weirdness/bug in Rack that may be in response to another bug
+#based on comment on line 26 of rack-1.6.0/lib/rack/body_proxy.rb
+module Rack
+  class BodyProxy
+    def each(*args, &block)
+      @body.is_a?(String) ?  block.call(@body) : @body.each(*args, &block)
+    end
+  end
+end
