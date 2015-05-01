@@ -27,8 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 #needed for now?
-gem 'volt',        git: "git://github.com/bglusman/volt"
-gem 'volt-sockjs', git: "git://github.com/bglusman/sockjs-ruby"
+gem 'volt',        git: "git://github.com/bglusman/volt", branch: 'resolve_upstream_conflicts'
 # gem 'volt-bootstrap_jumbotron_theme'
 # gem 'volt-user_templates'
 

@@ -1,22 +1,21 @@
 GIT
-  remote: git://github.com/bglusman/sockjs-ruby
-  revision: dfade2b0bfa33c2955a30a94e912bfd48d550ca8
+  remote: git://github.com/bglusman/volt
+  revision: f91565d25284f3fb6e570357c9c72210e2d1dabe
+  branch: resolve_upstream_conflicts
+PATH
+  remote: ../
   specs:
-    volt-sockjs (0.3.4.4)
-      faye-websocket (~> 0.7.1)
-      json
-      rack
-      rack-mount (~> 0.8.3)
+    third_rail (0.0.1)
+      faye-websocket
+      rails (~> 4.2)
       thin
 
-GIT
-  remote: git://github.com/bglusman/volt
-  revision: 3d9690bf1a0a0e61ad3a1e14132c9450f68cb551
-  specs:
-    volt (0.9.0.pre7)
+    volt (0.9.1.pre3)
       bcrypt (~> 3.1.9)
       bundler (>= 1.5)
+      concurrent-ruby (~> 0.8.0)
       configurations (~> 2.0.0.pre)
+      faye-websocket (~> 0.9.2)
       listen (~> 2.8.0)
       mongo (~> 1.9.0)
       opal (~> 0.7.1)
@@ -27,17 +26,7 @@ GIT
       sprockets-sass (~> 1.0.0)
       thor (~> 0.19.0)
       uglifier (>= 2.4.0)
-      volt-sockjs (~> 0.3.4.4)
       yui-compressor (~> 0.12.0)
-
-PATH
-  remote: ../
-  specs:
-    third_rail (0.0.1)
-      rails (~> 4.2)
-      volt-bootstrap
-      volt-bootstrap_jumbotron_theme
-      volt-user_templates
 
 GEM
   remote: https://rubygems.org/
@@ -91,14 +80,16 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    concurrent-ruby (0.8.0)
+      ref (~> 1.0, >= 1.0.5)
     configurations (2.0.0)
     daemons (1.2.2)
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.5.2)
-    faye-websocket (0.7.5)
+    faye-websocket (0.9.2)
       eventmachine (>= 0.12.0)
-      websocket-driver (>= 0.3.5)
+      websocket-driver (>= 0.5.1)
     ffi (1.9.8)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
@@ -122,18 +113,18 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
-    mime-types (2.4.3)
+    mime-types (2.5)
     mini_portile (0.6.2)
-    minitest (5.6.0)
+    minitest (5.6.1)
     mongo (1.9.2)
       bson (~> 1.9.2)
     multi_json (1.11.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    opal (0.7.1)
+    opal (0.7.2)
       hike (~> 1.2)
       sourcemap (~> 0.1.0)
-      sprockets (>= 2.2.3, < 4.0.0)
+      sprockets (>= 2.2.3, < 3.0.0)
       tilt (~> 1.4)
     opal-jquery (0.3.0)
       opal (~> 0.7.0)
@@ -142,8 +133,6 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.0)
-    rack-mount (0.8.3)
-      rack (>= 1.0.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -176,6 +165,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
+    ref (1.0.5)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -217,11 +207,6 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    volt-bootstrap (0.0.10)
-    volt-bootstrap_jumbotron_theme (0.1.0)
-    volt-fields (0.1.0)
-    volt-user_templates (0.1.4)
-      volt-fields (~> 0.1.0)
     websocket-driver (0.5.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -244,4 +229,3 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   volt!
-  volt-sockjs!

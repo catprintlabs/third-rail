@@ -9,11 +9,11 @@ module ThirdRail
       if params[:_volt_update]
         script_blocks.join("\n").html_safe
       else
-        script_blocks += Volt::Server.index_files.javascript_files.collect do |javascript_file|
+        script_blocks += $volt_javascript_files.collect do |javascript_file|
           "<script src='#{javascript_file}'></script>"
         end
 
-        script_blocks += Volt::Server.index_files.css_files.collect do |css_file|
+        script_blocks += $volt_css_files.collect do |css_file|
           "<link href='#{css_file}' media='all' rel='stylesheet' type='text/css' />"
         end
 
@@ -31,5 +31,10 @@ module ThirdRail
 
       end
     end
+
+    def render_component(component_name)
+      "<div class='volt-rails-component' data-component='#{component_name}' />".html_safe
+    end
+
   end
 end
